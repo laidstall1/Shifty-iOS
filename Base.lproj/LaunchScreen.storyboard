@@ -15,16 +15,40 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="RUG-WU-bHF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shifty" translatesAutoresizingMaskIntoConstraints="NO" id="eHo-vT-OmR">
+                                <rect key="frame" x="144" y="425" width="126" height="46"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vectors" translatesAutoresizingMaskIntoConstraints="NO" id="rRI-GU-hFP">
+                                <rect key="frame" x="57" y="277" width="300" height="279"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RUG-WU-bHF" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="3Tv-bj-H3A"/>
+                            <constraint firstItem="rRI-GU-hFP" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-31.5" id="4VV-TK-wiq"/>
+                            <constraint firstItem="RUG-WU-bHF" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Ixy-Eo-too"/>
+                            <constraint firstItem="eHo-vT-OmR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Tnw-nI-UpB"/>
+                            <constraint firstAttribute="trailing" secondItem="RUG-WU-bHF" secondAttribute="trailing" id="UN1-ap-AUM"/>
+                            <constraint firstItem="rRI-GU-hFP" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="WbW-q5-XxK"/>
+                            <constraint firstItem="eHo-vT-OmR" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="dFC-Iz-Hzf"/>
+                            <constraint firstAttribute="bottom" secondItem="RUG-WU-bHF" secondAttribute="bottom" id="kwX-K0-fUQ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Background" width="375" height="812"/>
+        <image name="Shifty" width="126" height="45"/>
+        <image name="Vectors" width="300" height="279"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
