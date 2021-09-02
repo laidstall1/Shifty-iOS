@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047A2BE526E0946400741A68 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A2BE426E0946400741A68 /* CustomLabel.swift */; };
+		047A2BE726E0A37F00741A68 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A2BE626E0A37F00741A68 /* OnboardingCell.swift */; };
 		04DDDEC826DF0334005C6EC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDDEC726DF0334005C6EC3 /* AppDelegate.swift */; };
 		04DDDECA26DF0334005C6EC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDDEC926DF0334005C6EC3 /* SceneDelegate.swift */; };
 		04DDDECC26DF0334005C6EC3 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDDECB26DF0334005C6EC3 /* OnboardingController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		047A2BE426E0946400741A68 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		047A2BE626E0A37F00741A68 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		04DDDEC426DF0334005C6EC3 /* Shifty-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shifty-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DDDEC726DF0334005C6EC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04DDDEC926DF0334005C6EC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 			children = (
 				04DDDEE126DF8FA1005C6EC3 /* UIView+Layout.swift */,
 				04DDDEE926DFA700005C6EC3 /* Extensions.swift */,
+				047A2BE426E0946400741A68 /* CustomLabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				04DDDEE726DF9494005C6EC3 /* topContainerView.swift */,
+				047A2BE626E0A37F00741A68 /* OnboardingCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -200,7 +206,9 @@
 			files = (
 				04DDDEE226DF8FA1005C6EC3 /* UIView+Layout.swift in Sources */,
 				04DDDEEA26DFA700005C6EC3 /* Extensions.swift in Sources */,
+				047A2BE726E0A37F00741A68 /* OnboardingCell.swift in Sources */,
 				04DDDECC26DF0334005C6EC3 /* OnboardingController.swift in Sources */,
+				047A2BE526E0946400741A68 /* CustomLabel.swift in Sources */,
 				04DDDEC826DF0334005C6EC3 /* AppDelegate.swift in Sources */,
 				04DDDEE826DF9494005C6EC3 /* topContainerView.swift in Sources */,
 				04DDDECA26DF0334005C6EC3 /* SceneDelegate.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class topContainerView: UIView {
+class TopContainerView: UIView {
     init(image: String) {
         super.init(frame: .zero)
         let iv = UIImageView()
