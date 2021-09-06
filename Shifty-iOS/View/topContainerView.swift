@@ -8,14 +8,12 @@
 import UIKit
 
 class TopContainerView: UIView {
-    init(image: String) {
+    init(imageView: UIImageView) {
         super.init(frame: .zero)
-        let iv = UIImageView()
-        iv.image = UIImage(named: image)
-        
-        addSubview(iv)
-        iv.centerY(inView: self)
-        iv.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
+       
+        addSubview(imageView)
+        imageView.centerY(inView: self)
+        imageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
     }
     
     required init?(coder: NSCoder) {

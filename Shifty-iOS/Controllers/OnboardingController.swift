@@ -11,11 +11,26 @@ private let reuseIdentifier = "OnboardingCell"
 class OnboardingController: UICollectionViewController {
 
     //    MARK: - Properties
-    private let topContainerView = TopContainerView(image: "topContainer")
-    private let skipButton = UIButton(bgColor: #colorLiteral(red: 0.6296878457, green: 0.4354371428, blue: 0.9175583124, alpha: 1) )
-    private let nextButton = UIButton(type: .system)
-    private let largeTitleLabel = CustomLabel(text: "Easy Process", font: .boldSystemFont(ofSize: 36), true)
-    private let descriptionLabel =  CustomLabel(text: "Find all your house needs in one place. We provide every service to make your home experience smooth.", font: .systemFont(ofSize: 16), false)
+    
+    private var pageControl: UIPageControl = {
+       let pg = UIPageControl()
+        pg.numberOfPages = 3
+        return pg
+    }()
+    
+    private let skipButton: UIButton = {
+        let btn = UIButton(bgColor:#colorLiteral(red: 0.361476779, green: 0.6912369132, blue: 0.8787621856, alpha: 1) )
+        btn.addTarget(self, action: #selector(handleSkipBtn), for: .touchUpInside)
+       return btn
+    }()
+    
+    private let nextButton: UIButton = {
+        let btn = UIButton(buttonType: .system)
+        btn.addTarget(self, action: #selector(handleNextButton), for: .touchUpInside)
+        return btn
+    }()
+    
+    var slides: [OnboardingSlide] = []
     
     //    MARK: - Lifecycle
     
@@ -23,9 +38,16 @@ class OnboardingController: UICollectionViewController {
         super.viewDidLoad()
         configureNavBar()
         configureCollectionView()
+        configureUI()
+        slides = configureOnboardingSlides()
         navigationController?.navigationBar.isHidden = true
+        configurePageControl()
     }
 
+    override func viewDidLayoutSubviews() {
+        configurePageControl() 
+    }
+    
     init() {
             super.init(collectionViewLayout: UICollectionViewFlowLayout())
         }
@@ -35,8 +57,36 @@ class OnboardingController: UICollectionViewController {
         }
     //    MARK: - Selectors
     
+    @objc func handleSkipBtn() {
+        let vc = LoginController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    @objc func handleNextButton() {
+    }
+    
+    @objc func handlePageControl() {
+    }
+    
     
     //    MARK: - Helpers
+    
+    func configurePageControl() {
+        pageControl.currentPage = 0
+        pageControl.currentPageIndicatorTintColor = UIColor.red
+        pageControl.tintColor = .lightGray
+            self.view.insertSubview(pageControl, at: 0)
+        view.bringSubviewToFront(pageControl)
+    }
+    
+    fileprivate func configureOnboardingSlides() -> [OnboardingSlide] {
+        return [OnboardingSlide(title: "Easy Process", description: "Find all your house needs in one place. We provide every service to make your home experience smooth.", image: "topContainer"),
+                
+                OnboardingSlide(title: "Fast Transportation", description: "We provide the best transportation service and organize your furniture properly to prevent any damage.", image: "fastTransport"),
+                
+                OnboardingSlide(title: "Expert People", description: "We have the best in class individuals working just for you. They are well  trained and capable of handling anything you need.", image: "expertPeople")]
+    }
     
     func configureCollectionView() {
         collectionView.register(OnboardingCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -48,35 +98,38 @@ class OnboardingController: UICollectionViewController {
     }
     
     func configureUI() {
-        view.addSubview(topContainerView)
-        topContainerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
-        topContainerView.anchor(top: view.topAnchor, left: view.leftAnchor, right: view.rightAnchor)
-
-        topContainerView.addSubview(skipButton)
-        skipButton.anchor(top: topContainerView.safeAreaLayoutGuide.topAnchor, right: topContainerView.rightAnchor, paddingRight: 30)
-
-        let stack = UIStackView(arrangedSubviews: [largeTitleLabel, descriptionLabel])
-        stack.axis = .vertical
-        stack.spacing = 10
-
-        view.addSubview(stack)
-        stack.centerX(inView: view)
-        stack.anchor(top: topContainerView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 49, paddingLeft: 37, paddingRight: 37)
-
+        view.addSubview(skipButton)
+        skipButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, right: view.rightAnchor, paddingRight: 30)
+   
         view.addSubview(nextButton)
         nextButton.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 40, paddingBottom: 24, paddingRight: 40)
         nextButton.centerX(inView: view)
+        
+        pageControl.addTarget(self, action: #selector(handlePageControl), for: .valueChanged)
+        pageControl.hidesForSinglePage = true
+        pageControl.pageIndicatorTintColor = #colorLiteral(red: 0.9921568627, green: 0.4196078431, blue: 0.1333333333, alpha: 1)
+        pageControl.currentPageIndicatorTintColor = .orange
+        
+        view.addSubview(pageControl)
+        pageControl.centerX(inView: view)
+        pageControl.setDimensions(height:18 , width: 56)
+        pageControl.anchor(bottom: nextButton.topAnchor, paddingBottom: 20)
+        
     }
 }
 
 extension OnboardingController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        slides.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? OnboardingCell else  { return UICollectionViewCell() }
+        cell.configure(with: slides[indexPath.row])
         return cell
+    }
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        self.pageControl.currentPage = indexPath.section
     }
 }
 

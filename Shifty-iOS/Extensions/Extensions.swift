@@ -22,7 +22,7 @@ extension UIButton {
 }
 
 extension UIButton {
-    convenience init(type: ButtonType) {
+    convenience init(buttonType: ButtonType) {
         self.init()
         setTitle("Next", for: .normal)
         setTitleColor(.white, for: .normal)
@@ -38,13 +38,14 @@ extension UIViewController {
     func configureNavBar() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         appearance.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.prefersLargeTitles =  true
         
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.isTranslucent = true
