@@ -20,3 +20,21 @@ class TopContainerView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+class CustomMobileTitleView: UIView {
+    init(label: [UILabel]) {
+        super.init(frame: .zero)
+        
+        setDimensions(height: 124, width: 291)
+        
+        let stack = UIStackView(arrangedSubviews: label)
+        stack.axis = .vertical
+        stack.spacing = 6
+        addSubview(stack)
+        stack.anchor(top: topAnchor, left: leftAnchor, right: rightAnchor)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}

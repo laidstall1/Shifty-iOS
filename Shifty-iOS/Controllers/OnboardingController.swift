@@ -25,7 +25,7 @@ class OnboardingController: UICollectionViewController {
     }()
     
     private let nextButton: UIButton = {
-        let btn = UIButton(buttonType: .system)
+        let btn = UIButton(buttonType: .system, title: "Next")
         btn.addTarget(self, action: #selector(handleNextButton), for: .touchUpInside)
         return btn
     }()
@@ -58,9 +58,10 @@ class OnboardingController: UICollectionViewController {
     //    MARK: - Selectors
     
     @objc func handleSkipBtn() {
-        let vc = LoginController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        let vc = WelcomeMobileController()
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true)
     }
     
     @objc func handleNextButton() {

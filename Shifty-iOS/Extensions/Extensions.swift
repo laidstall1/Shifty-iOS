@@ -22,9 +22,9 @@ extension UIButton {
 }
 
 extension UIButton {
-    convenience init(buttonType: ButtonType) {
+    convenience init(buttonType: ButtonType, title: String) {
         self.init()
-        setTitle("Next", for: .normal)
+        setTitle(title, for: .normal)
         setTitleColor(.white, for: .normal)
         backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.4196078431, blue: 0.1333333333, alpha: 1)
         titleLabel?.font = .boldSystemFont(ofSize: 14)
@@ -40,7 +40,7 @@ extension UIViewController {
         appearance.configureWithOpaqueBackground()
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        appearance.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
@@ -52,3 +52,6 @@ extension UIViewController {
         navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
     }
 }
+
+
+
