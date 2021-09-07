@@ -19,8 +19,8 @@ class OnboardingCell: UICollectionViewCell {
         return iv
     }()
     
-    private let largeTitleLabel = CustomLabel(text: "Easy Process", font: .boldSystemFont(ofSize: 36), true)
-    private let descriptionLabel =  CustomLabel(text: "Find all your house needs in one place. We provide every service to make your home experience smooth.", font: .systemFont(ofSize: 16), false)
+    private let largeTitleLabel = CustomOnboardingLabel(text: "Easy Process", font: .boldSystemFont(ofSize: 36), true)
+    private let descriptionLabel =  CustomOnboardingLabel(text: "Find all your house needs in one place. We provide every service to make your home experience smooth.", font: .systemFont(ofSize: 16), false)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

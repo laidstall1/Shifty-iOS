@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomLabel: UILabel {
+class CustomOnboardingLabel: UILabel {
     init(text: String, font: UIFont, _ largeTitle: Bool) {
         super.init(frame: .zero)
         

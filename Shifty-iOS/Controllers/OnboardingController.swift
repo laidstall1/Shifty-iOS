@@ -12,20 +12,19 @@ class OnboardingController: UICollectionViewController {
 
     //    MARK: - Properties
     
-    private var pageControl: UIPageControl = {
+    private let pageControl: UIPageControl = {
        let pg = UIPageControl()
-        pg.numberOfPages = 3
         return pg
     }()
     
-    private let skipButton: UIButton = {
-        let btn = UIButton(bgColor:#colorLiteral(red: 0.361476779, green: 0.6912369132, blue: 0.8787621856, alpha: 1) )
+    private lazy var skipButton: UIButton = {
+        let btn = createSkipButton()
         btn.addTarget(self, action: #selector(handleSkipBtn), for: .touchUpInside)
        return btn
     }()
     
-    private let nextButton: UIButton = {
-        let btn = UIButton(buttonType: .system)
+    private lazy var nextButton: UIButton = {
+        let btn = createNavigationButton(title: "Continue")
         btn.addTarget(self, action: #selector(handleNextButton), for: .touchUpInside)
         return btn
     }()
@@ -58,9 +57,10 @@ class OnboardingController: UICollectionViewController {
     //    MARK: - Selectors
     
     @objc func handleSkipBtn() {
-        let vc = LoginController()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        let vc = WelcomeMobileController()
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true)
     }
     
     @objc func handleNextButton() {
@@ -86,6 +86,22 @@ class OnboardingController: UICollectionViewController {
                 OnboardingSlide(title: "Fast Transportation", description: "We provide the best transportation service and organize your furniture properly to prevent any damage.", image: "fastTransport"),
                 
                 OnboardingSlide(title: "Expert People", description: "We have the best in class individuals working just for you. They are well  trained and capable of handling anything you need.", image: "expertPeople")]
+    }
+    
+    //    MARK: - Helpers
+    
+    func createSkipButton() -> UIButton {
+        let button = UIButton()
+            button.setTitle("Skip", for: .normal)
+            button.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1).cgColor
+            button.setTitleColor(.white, for: .normal)
+            button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+            button.setWidth(width: 69)
+            button.setHeight(height: 41)
+            button.alpha = 0.8
+            button.layer.cornerRadius = 41 / 2
+        
+            return button
     }
     
     func configureCollectionView() {
