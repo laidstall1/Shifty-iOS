@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,14 +12,23 @@
 		047A2BE726E0A37F00741A68 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A2BE626E0A37F00741A68 /* OnboardingCell.swift */; };
 		047A2BE926E121E900741A68 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A2BE826E121E900741A68 /* Core.swift */; };
 		047A2BEB26E1239100741A68 /* WelcomeMobileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A2BEA26E1239100741A68 /* WelcomeMobileController.swift */; };
-		04AE404226E69D9000099900 /* CustomLoginTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE404126E69D9000099900 /* CustomLoginTextfield.swift */; };
+		04AE404226E69D9000099900 /* CustomMobileTextfieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE404126E69D9000099900 /* CustomMobileTextfieldView.swift */; };
+		04AE404426E6DB8D00099900 /* OTPVerificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE404326E6DB8D00099900 /* OTPVerificationController.swift */; };
+		04AE404626E73B2F00099900 /* CustomTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE404526E73B2F00099900 /* CustomTitleView.swift */; };
+		04AE404926E73C0C00099900 /* CustomTitleContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE404826E73C0C00099900 /* CustomTitleContainerView.swift */; };
+		04AE404B26E75B6C00099900 /* CustomOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE404A26E75B6C00099900 /* CustomOTPView.swift */; };
+		04AE405126E76EF400099900 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 04AE405026E76EF400099900 /* IQKeyboardManagerSwift */; };
+		04AE405526E774A500099900 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE405426E774A500099900 /* RegisterController.swift */; };
+		04AE405826E780AC00099900 /* FormInputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE405726E780AC00099900 /* FormInputContainerView.swift */; };
+		04AE405A26E7907200099900 /* CustomTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE405926E7907200099900 /* CustomTextfield.swift */; };
+		04AE407C26E808E800099900 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AE407B26E808E800099900 /* LoginController.swift */; };
 		04DDDEC826DF0334005C6EC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDDEC726DF0334005C6EC3 /* AppDelegate.swift */; };
 		04DDDECA26DF0334005C6EC3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDDEC926DF0334005C6EC3 /* SceneDelegate.swift */; };
 		04DDDECC26DF0334005C6EC3 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDDECB26DF0334005C6EC3 /* OnboardingController.swift */; };
 		04DDDED126DF0337005C6EC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DDDED026DF0337005C6EC3 /* Assets.xcassets */; };
 		04DDDED426DF0337005C6EC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DDDED226DF0337005C6EC3 /* LaunchScreen.storyboard */; };
 		04DDDEE226DF8FA1005C6EC3 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDDEE126DF8FA1005C6EC3 /* UIView+Layout.swift */; };
-		04DDDEE826DF9494005C6EC3 /* topContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDDEE726DF9494005C6EC3 /* topContainerView.swift */; };
+		04DDDEE826DF9494005C6EC3 /* TopContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDDEE726DF9494005C6EC3 /* TopContainerView.swift */; };
 		04DDDEEA26DFA700005C6EC3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDDEE926DFA700005C6EC3 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +38,15 @@
 		047A2BE626E0A37F00741A68 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		047A2BE826E121E900741A68 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		047A2BEA26E1239100741A68 /* WelcomeMobileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMobileController.swift; sourceTree = "<group>"; };
-		04AE404126E69D9000099900 /* CustomLoginTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginTextfield.swift; sourceTree = "<group>"; };
+		04AE404126E69D9000099900 /* CustomMobileTextfieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMobileTextfieldView.swift; sourceTree = "<group>"; };
+		04AE404326E6DB8D00099900 /* OTPVerificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationController.swift; sourceTree = "<group>"; };
+		04AE404526E73B2F00099900 /* CustomTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitleView.swift; sourceTree = "<group>"; };
+		04AE404826E73C0C00099900 /* CustomTitleContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitleContainerView.swift; sourceTree = "<group>"; };
+		04AE404A26E75B6C00099900 /* CustomOTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOTPView.swift; sourceTree = "<group>"; };
+		04AE405426E774A500099900 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		04AE405726E780AC00099900 /* FormInputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormInputContainerView.swift; sourceTree = "<group>"; };
+		04AE405926E7907200099900 /* CustomTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextfield.swift; sourceTree = "<group>"; };
+		04AE407B26E808E800099900 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		04DDDEC426DF0334005C6EC3 /* Shifty-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shifty-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DDDEC726DF0334005C6EC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04DDDEC926DF0334005C6EC3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +55,7 @@
 		04DDDED326DF0337005C6EC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04DDDED526DF0337005C6EC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04DDDEE126DF8FA1005C6EC3 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
-		04DDDEE726DF9494005C6EC3 /* topContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topContainerView.swift; sourceTree = "<group>"; };
+		04DDDEE726DF9494005C6EC3 /* TopContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopContainerView.swift; sourceTree = "<group>"; };
 		04DDDEE926DFA700005C6EC3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,12 +64,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04AE405126E76EF400099900 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04AE404C26E75BC600099900 /* Onboarding Views */ = {
+			isa = PBXGroup;
+			children = (
+				04DDDEE726DF9494005C6EC3 /* TopContainerView.swift */,
+				047A2BE426E0946400741A68 /* CustomOnboardingLabel.swift */,
+				047A2BE626E0A37F00741A68 /* OnboardingCell.swift */,
+			);
+			path = "Onboarding Views";
+			sourceTree = "<group>";
+		};
+		04AE404D26E75BDA00099900 /* Welcome Mobile Views */ = {
+			isa = PBXGroup;
+			children = (
+				04AE404526E73B2F00099900 /* CustomTitleView.swift */,
+				04AE404A26E75B6C00099900 /* CustomOTPView.swift */,
+				04AE404126E69D9000099900 /* CustomMobileTextfieldView.swift */,
+			);
+			path = "Welcome Mobile Views";
+			sourceTree = "<group>";
+		};
+		04AE404E26E75C0900099900 /* OTP Verification Views */ = {
+			isa = PBXGroup;
+			children = (
+				04AE404826E73C0C00099900 /* CustomTitleContainerView.swift */,
+			);
+			path = "OTP Verification Views";
+			sourceTree = "<group>";
+		};
+		04AE405626E7807A00099900 /* Register Views */ = {
+			isa = PBXGroup;
+			children = (
+				04AE405726E780AC00099900 /* FormInputContainerView.swift */,
+				04AE405926E7907200099900 /* CustomTextfield.swift */,
+			);
+			path = "Register Views";
+			sourceTree = "<group>";
+		};
 		04DDDEBB26DF0334005C6EC3 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +152,9 @@
 			children = (
 				04DDDECB26DF0334005C6EC3 /* OnboardingController.swift */,
 				047A2BEA26E1239100741A68 /* WelcomeMobileController.swift */,
+				04AE404326E6DB8D00099900 /* OTPVerificationController.swift */,
+				04AE405426E774A500099900 /* RegisterController.swift */,
+				04AE407B26E808E800099900 /* LoginController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -124,10 +182,10 @@
 		04DDDEE326DF9177005C6EC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				04DDDEE726DF9494005C6EC3 /* topContainerView.swift */,
-				047A2BE426E0946400741A68 /* CustomOnboardingLabel.swift */,
-				047A2BE626E0A37F00741A68 /* OnboardingCell.swift */,
-				04AE404126E69D9000099900 /* CustomLoginTextfield.swift */,
+				04AE405626E7807A00099900 /* Register Views */,
+				04AE404D26E75BDA00099900 /* Welcome Mobile Views */,
+				04AE404E26E75C0900099900 /* OTP Verification Views */,
+				04AE404C26E75BC600099900 /* Onboarding Views */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +221,9 @@
 			dependencies = (
 			);
 			name = "Shifty-iOS";
+			packageProductDependencies = (
+				04AE405026E76EF400099900 /* IQKeyboardManagerSwift */,
+			);
 			productName = "Shifty-iOS";
 			productReference = 04DDDEC426DF0334005C6EC3 /* Shifty-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -190,6 +251,9 @@
 				Base,
 			);
 			mainGroup = 04DDDEBB26DF0334005C6EC3;
+			packageReferences = (
+				04AE404F26E76EF400099900 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 04DDDEC526DF0334005C6EC3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -218,16 +282,24 @@
 			files = (
 				047A2BE926E121E900741A68 /* Core.swift in Sources */,
 				04DDDEE226DF8FA1005C6EC3 /* UIView+Layout.swift in Sources */,
-				04AE404226E69D9000099900 /* CustomLoginTextfield.swift in Sources */,
+				04AE404226E69D9000099900 /* CustomMobileTextfieldView.swift in Sources */,
 				04DDDEEA26DFA700005C6EC3 /* Extensions.swift in Sources */,
 				047A2BE726E0A37F00741A68 /* OnboardingCell.swift in Sources */,
+				04AE405A26E7907200099900 /* CustomTextfield.swift in Sources */,
+				04AE404926E73C0C00099900 /* CustomTitleContainerView.swift in Sources */,
 				047A2BEB26E1239100741A68 /* WelcomeMobileController.swift in Sources */,
+				04AE404B26E75B6C00099900 /* CustomOTPView.swift in Sources */,
+				04AE407C26E808E800099900 /* LoginController.swift in Sources */,
 				04DDDECC26DF0334005C6EC3 /* OnboardingController.swift in Sources */,
 				047A2BE526E0946400741A68 /* CustomOnboardingLabel.swift in Sources */,
 				04DDDEC826DF0334005C6EC3 /* AppDelegate.swift in Sources */,
-				04DDDEE826DF9494005C6EC3 /* topContainerView.swift in Sources */,
+				04DDDEE826DF9494005C6EC3 /* TopContainerView.swift in Sources */,
 				04DDDECA26DF0334005C6EC3 /* SceneDelegate.swift in Sources */,
+				04AE405526E774A500099900 /* RegisterController.swift in Sources */,
+				04AE404426E6DB8D00099900 /* OTPVerificationController.swift in Sources */,
+				04AE404626E73B2F00099900 /* CustomTitleView.swift in Sources */,
 				042CBCF726E1408C003F8BF4 /* OnboardingSlide.swift in Sources */,
+				04AE405826E780AC00099900 /* FormInputContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +493,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04AE404F26E76EF400099900 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04AE405026E76EF400099900 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04AE404F26E76EF400099900 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04DDDEBC26DF0334005C6EC3 /* Project object */;
 }

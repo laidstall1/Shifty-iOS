@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomLoginTextfieldView: UIView {
+class CustomMobileTextfieldView: UIView {
     init(textfield1: UITextField, textfield2: UITextField) {
         super.init(frame: .zero)
         

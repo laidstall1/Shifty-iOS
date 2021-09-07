@@ -11,16 +11,16 @@ class WelcomeMobileController: UIViewController {
     
     //  MARK: - Properties
     
-    private lazy var topContainer: CustomMobileTitleView = {
-        return CustomMobileTitleView(label: [titleLabel, descriptionLabel])
+    private lazy var topContainer: CustomTitleView = {
+        return CustomTitleView(label: [titleLabel, descriptionLabel], spacing: 6)
     }()
     
-    private lazy var titleLabel = createTextLabel(font: .boldSystemFont(ofSize: 35), text: "Welcome")
-    private lazy var descriptionLabel = createTextLabel(font: .systemFont(ofSize: 28), text: "Enter your phone number to get started.")
+    private let titleLabel = UILabel(font: .boldSystemFont(ofSize: 35), text: "Welcome")
+    private let descriptionLabel = UILabel(font: .systemFont(ofSize: 24), text: "Enter your phone number to get started.")
 
     
-    private lazy var mobileInputView: CustomLoginTextfieldView = {
-        return CustomLoginTextfieldView(textfield1: countryTextfield, textfield2: phoneNumberTextfield)
+    private lazy var mobileInputView: CustomMobileTextfieldView = {
+        return CustomMobileTextfieldView(textfield1: countryTextfield, textfield2: phoneNumberTextfield)
     }()
     
     private lazy var countryTextfield = createTextfield()
@@ -34,7 +34,7 @@ class WelcomeMobileController: UIViewController {
         return lbl
     }()
     
-    private let continueButton = UIButton(buttonType: .system, title: "Continue")
+    private lazy var continueButton = createNavigationButton(title: "Continue")
 
     //  MARK: - Lifecycle
     
@@ -49,7 +49,14 @@ class WelcomeMobileController: UIViewController {
     //  MARK: - Selectors
     
     @objc func handleContinue() {
+        guard let text = phoneNumberTextfield.text, !text.isEmpty else { return }
         
+        let vc = OTPVerificationController()
+        vc.phoneNumberText = text
+        vc.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(vc, animated: true)
+        
+        phoneNumberTextfield.text = ""
     }
     
     //  MARK: - Helpers
@@ -61,13 +68,12 @@ class WelcomeMobileController: UIViewController {
         return tf
     }
     
-    func createTextLabel(font: UIFont, text: String) -> UILabel {
-        let lbl = UILabel()
-        lbl.font = font
-        lbl.clipsToBounds = true
-        lbl.text = text
-        lbl.numberOfLines = 0
-        return lbl
+    fileprivate func configureTextfields() {
+        countryTextfield.text = "United States(+1)"
+        countryTextfield.isEnabled = false
+        phoneNumberTextfield.placeholder = "Phone number"
+        phoneNumberTextfield.keyboardType = .numberPad
+        phoneNumberTextfield.delegate = self
     }
     
     func configureUI() {
@@ -81,9 +87,7 @@ class WelcomeMobileController: UIViewController {
         mobileInputView.anchor(top: topContainer.bottomAnchor, paddingTop: 29)
         mobileInputView.centerX(inView: view)
         
-        countryTextfield.text = "United States(+1)"
-        countryTextfield.isEnabled = false
-        phoneNumberTextfield.placeholder = "Phone number"
+        configureTextfields()
         
         continueButton.addTarget(self, action: #selector(handleContinue), for: .touchUpInside)
         
@@ -92,5 +96,12 @@ class WelcomeMobileController: UIViewController {
         bottomStack.anchor(left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 40, paddingBottom: 30, paddingRight: 40)
         bottomStack.axis = .vertical
         bottomStack.spacing = 17
+    }
+}
+extension WelcomeMobileController: UITextFieldDelegate {
+    func textField(_ textField: UITextField,
+      shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+      let invalidCharacters = CharacterSet(charactersIn: "0123456789").inverted
+      return (string.rangeOfCharacter(from: invalidCharacters) == nil)
     }
 }
